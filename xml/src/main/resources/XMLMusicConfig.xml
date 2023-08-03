@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="AllMusic" class="service.playerImpl.Player"/>
+    <bean id="ClassicMusic" class="service.player.impl.ClassicMusicPlayer"/>
+    <bean id="RockMusic" class="service.player.impl.RockMusicPlayer"/>
+
+    <bean id="musicPlayer" class="service.MusicPlayer">
+        <constructor-arg ref="AllMusic"/>
+        <constructor-arg ref="ClassicMusic"/>
+        <constructor-arg ref="RockMusic"/>
+    </bean>
+
+</beans>
